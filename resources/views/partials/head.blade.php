@@ -20,7 +20,7 @@
     rel="stylesheet"
 />
 
-<title>Stitch Design</title>
+{{-- <title>Stitch Design</title> --}}
 <link
     href="data:image/x-icon;base64,"
     rel="icon"

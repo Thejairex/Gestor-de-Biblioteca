@@ -6,6 +6,7 @@ use App\Http\Controllers\LoanController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\UserController;
+use App\Livewire\Book;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -17,15 +18,7 @@ Route::controller(DashboardController::class)->group(function () {
     Route::get('/dashboard', 'index')->name('dashboard');
 });
 
-Route::controller(BookController::class)->group(function () {
-    Route::get('/books', 'index')->name('books.index');
-    Route::get('/books/create', 'create')->name('books.create');
-    Route::post('/books', 'store')->name('books.store');
-    Route::get('/books/{book}', 'show')->name('books.show');
-    Route::get('/books/{book}/edit', 'edit')->name('books.edit');
-    Route::put('/books/{book}', 'update')->name('books.update');
-    Route::delete('/books/{book}', 'destroy')->name('books.destroy');
-});
+Route::get('/books', Book::class)->name('books.index');
 
 Route::controller(LoanController::class)->group(function () {
     Route::get('/loans', 'index')->name('loans.index');

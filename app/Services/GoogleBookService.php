@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Book;
+use App\Models\GoogleBook;
 
 class GoogleBookService
 {
@@ -36,7 +37,7 @@ class GoogleBookService
             \Log::debug($items);
             foreach ($items as $item) {
                 $info = $item->volumeInfo ?? [];
-                $books[] = Book::firstOrCreate(
+                $books[] = GoogleBook::firstOrCreate(
                     [
                         'google_id' => $item->id,
                     ],

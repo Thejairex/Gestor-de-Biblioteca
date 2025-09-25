@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Book;
-use App\Http\Requests\StoreBookRequest;
-use App\Http\Requests\UpdateBookRequest;
+use App\Models\GoogleBook;
+use App\Http\Requests\StoreGoogleBookRequest;
+use App\Http\Requests\UpdateGoogleBookRequest;
 
-class BookController extends Controller
+class GoogleBookController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        
+        //
     }
 
     /**
@@ -27,7 +27,7 @@ class BookController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreBookRequest $request)
+    public function store(StoreGoogleBookRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class BookController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Book $book)
+    public function show(GoogleBook $googleBook)
     {
         //
     }
@@ -43,7 +43,7 @@ class BookController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Book $book)
+    public function edit(GoogleBook $googleBook)
     {
         //
     }
@@ -51,7 +51,7 @@ class BookController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateBookRequest $request, Book $book)
+    public function update(UpdateGoogleBookRequest $request, GoogleBook $googleBook)
     {
         //
     }
@@ -59,7 +59,7 @@ class BookController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Book $book)
+    public function destroy(GoogleBook $googleBook)
     {
         //
     }

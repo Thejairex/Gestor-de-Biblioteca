@@ -11,19 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('books', function (Blueprint $table) {
+        Schema::create('google_books', function (Blueprint $table) {
             $table->id();
             $table->string('thumbnail')->nullable();
+            $table->string('google_id')->unique();
             $table->string('title');
-            $table->string('isbn')->nullable();
             $table->string('authors')->nullable();
-            $table->string('categories')->nullable();
             $table->string('publisher')->nullable();
             $table->date('published_date')->nullable();
             $table->text('description')->nullable();
-            $table->integer('stock')->default(0);
-            $table->string('status')->default('active');
-            $table->foreignId('google_book_id')->nullable()->constrained('google_books')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -33,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('books');
+        Schema::dropIfExists('google_books');
     }
 };

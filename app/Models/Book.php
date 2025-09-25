@@ -13,24 +13,27 @@ class Book extends Model implements HasMedia
     use HasFactory, InteractsWithMedia;
 
     protected $fillable = [
-        'google_id',
         'title',
+        'isbn',
         'authors',
         'publisher',
         'published_date',
+        'categories',
         'description',
-        'thumbnail'
+        'thumbnail',
+        'stock',
+        'status',
+        'google_book_id',
     ];
-    protected $dates = ['published_at'];
+    protected $dates = ['published_date'];
+
+    public function googleBook()
+    {
+        return $this->belongsTo(GoogleBook::class);
+    }
 
     public function scopePublished($query)
     {
-        return $query->whereNotNull('published_at');
-    }
-
-
-    public function registerMediaCollections(): void
-    {
-        $this->addMediaCollection('covers')->singleFile();
+        return $query->whereNotNull('published_date');
     }
 }

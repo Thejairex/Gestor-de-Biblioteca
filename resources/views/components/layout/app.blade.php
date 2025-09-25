@@ -3,7 +3,7 @@
 
 <head>
     @include('partials.head', [
-        'title' => $title,
+        'title' => $title ?? 'Biblioteca - Sistema de Gestión',
     ])
 </head>
 
